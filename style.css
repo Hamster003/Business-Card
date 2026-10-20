@@ -1,0 +1,145 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --card: #11141c;
+  --surface: #191e29;
+  --border: #2a3040;
+  --text: #f3f5f9;
+  --muted: #9ba4b5;
+  --accent: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at top, #172b46 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: clamp(1.5rem, 6vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: var(--card);
+  box-shadow: 0 24px 80px #0006;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 2rem;
+  border: 1px solid #60a5fa66;
+  border-radius: 23px;
+  background: #172b46;
+  color: var(--accent);
+  font: 700 1.7rem "Space Grotesk", sans-serif;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+h1 {
+  margin: .6rem 0;
+  font: 700 clamp(2rem, 8vw, 3rem)/1.1 "Space Grotesk", sans-serif;
+  letter-spacing: -.055em;
+  overflow-wrap: anywhere;
+}
+
+.role {
+  color: #d0d5df;
+  font-weight: 500;
+}
+
+.bio {
+  margin: 1.2rem 0 2rem;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+.links {
+  display: grid;
+  gap: .75rem;
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color .2s, transform .2s, background .2s;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: #1b2738;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.link.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #0b1729;
+}
+
+.link.primary:hover {
+  border-color: #93c5fd;
+  background: #93c5fd;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  color: #697386;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none;
+  }
+}
